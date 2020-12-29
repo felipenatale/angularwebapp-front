@@ -1,8 +1,11 @@
 <div role="form">
     <div class="box-body">
-        <field id="name" label="Nome" grid="12 6 4" placeholder="Inserir o nome" model="bcCtrl.billingCycle.name"></field>
-        <field id="month" label="Mês" grid="12 6 4" placeholder="Inserir o mês" model="bcCtrl.billingCycle.month" type="number"></field>
-        <field id="year" label="Ano" grid="12 6 4" placeholder="Inserir o ano" model="bcCtrl.billingCycle.year" type="number"></field>
+        <field id="name" label="Nome" grid="12 6 4" placeholder="Inserir o nome" 
+        model="bcCtrl.billingCycle.name" readonly="bcCtrl.tabDelete"></field>
+        <field id="month" label="Mês" grid="12 6 4" placeholder="Inserir o mês" 
+        model="bcCtrl.billingCycle.month" type="number" readonly="bcCtrl.tabDelete"></field>
+        <field id="year" label="Ano" grid="12 6 4" placeholder="Inserir o ano" 
+        model="bcCtrl.billingCycle.year" type="number" readonly="bcCtrl.tabDelete"></field>
     </div>
     <div>
         <button class="btn btn-primary" ng-click="bcCtrl.create()"
@@ -10,8 +13,8 @@
         <button class="btn btn-info" 
             ng-if="bcCtrl.tabUpdate">Alterar</button>
         <button class="btn btn-danger"
-            ng-if="bcCtrl.tabDelete">Excluir</button>
+            ng-if="bcCtrl.tabDelete" ng-click="bcCtrl.delete()">Excluir</button>
         <button class="btn btn-default"
-            ng-if="bcCtrl.tabList">Cancelar</button>
+            ng-click="bcCtrl.refresh()">Cancelar</button>
     </div>
 </div>
